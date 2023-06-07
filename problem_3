@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Prompt the user to enter a phrase
+echo "Enter a phrase:"
+read phrase
+
+# Trim leading and trailing white spaces
+trimmed_phrase="${phrase#"${phrase%%[![:space:]]*}"}"
+trimmed_phrase="${trimmed_phrase%"${trimmed_phrase##*[![:space:]]}"}"
+
+# Count the number of words in the phrase
+word_count=$(echo "$trimmed_phrase" | wc -w)
+
+# Count the number of white spaces
+space_count=$(echo "$trimmed_phrase" | tr -cd ' ' | wc -c)
+
+# Display the results
+echo "The number of words is $word_count"
+echo "The number of white spaces is $space_count"
