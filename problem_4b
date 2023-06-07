@@ -1,0 +1,2 @@
+#!/bin/bash
+mkdir $(cat dir_names | tr "\n" " ")
