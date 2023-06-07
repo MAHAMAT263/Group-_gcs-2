@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Generate random numbers between 1 and 10000
+num1=$((RANDOM % 10000 + 1))
+num2=$((RANDOM % 10000 + 1))
+
+# Calculate square roots
+sqrt1=$(bc <<< "scale=2; sqrt($num1)")
+sqrt2=$(bc <<< "scale=2; sqrt($num2)")
+
+# Print the numbers and their square roots
+echo "The first random number generated is $num1"
+echo "The square root is $sqrt1"
+echo "The second random number generated is $num2"
+echo "The square root is $sqrt2"
+
+# Calculate the sum of square roots
+sum=$(bc <<< "scale=2; $sqrt1 + $sqrt2")
+
+# Print the sum of square roots
+echo "The sum of their square roots is $sum"
